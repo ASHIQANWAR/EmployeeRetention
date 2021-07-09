@@ -1,0 +1,51 @@
+<head>
+    <title> Employee Retentioan Details</title>
+</head>
+
+<body>
+    <h1>ENTER EMPLOYEE DETAILS</h1>
+    <br>
+        <form action=" {{ url_for('predict') }}" method="POST">
+            <label for="satisfaction_level">Satisfaction level ( between 0 and 1)</label>
+            <input type="text" id="satisfaction_level" name="satisfaction_level">
+            <br>
+            <label for="last_evaluation">Last Evaluation(between 0 and 1)</label>
+            <input type="text" id="last_evaluation" name="last_evaluation">
+            <br>
+            <label for="number_project">No of projects</label>
+            <input type="text" id="number_project" name="number_project">
+            <br>
+            <label for="average_montly_hours">Average monthly hours</label>
+            <input type="text" id="average_montly_hours" name="average_montly_hours">
+            <br>
+            <label for="time_spend_company">Years spend ath the company</label>
+            <input type="text" id="time_spend_company" name="time_spend_company">
+            <br>
+            <label for="Work_accident">Whether met with accident?</label>
+            <select id="Work_accident" name="Work_accident">
+                <option value= '1'>yes</option>
+                <option value= '0' >no</option>
+            </select>
+            <br>
+            <label for="promotion">Whether promoted in last 5 years?</label>
+            <select id="promotion">
+                <option value="1">yes</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+            <label for="salary">Salary</label>
+            <select id="salary" name="salary">
+              <option value="low">low</option>
+              <option value="medium">medium</option>
+              <option value="high">high</option>
+            </select>
+            <br>
+            <br>
+
+              <button id="submit" type="submit">Check</button>
+
+        </form>
+
+<br><br>
+<h3> {{prediction_text}}</h3>
+</body>
